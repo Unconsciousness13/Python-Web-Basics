@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1>Django101</h1>
-    <h3>WTF</h3>
-    <h4>HEllo Madafaka</h4>
+    <h1>Django101 project</h1>
+    <h2>My name is {{name}}</h2>
+    {% for person in people %} {{ person.name}}, {{ person.age}} {%endfor %}
 </body>
 
 </html>
