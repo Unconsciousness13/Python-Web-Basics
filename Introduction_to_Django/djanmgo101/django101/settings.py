@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'django101',
+    'django101.cities',
 ]
 
 MIDDLEWARE = [
