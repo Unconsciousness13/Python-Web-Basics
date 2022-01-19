@@ -108,3 +108,20 @@ VALUES
     (1, 1, 1, '2020-06-08', '2020-06-10'),
     (2, 2, 2, '2020-06-10', '2020-06-15'),
     (3, 3, 2, '2020-06-20', '2020-06-23')
+-----------------------------------------
+SELECT * FROM dog_room
+------------------------
+SELECT cat_id FROM cat_room
+WHERE hotel_id = 2
+-------------------------
+SELECT * from pet_owner
+ORDER BY owner_age DESC
+--------------------------
+SELECT COUNT(*) from cat as count
+WHERE cat_age >= 3
+---------------------------------------
+DELETE FROM  cat c
+WHERE c.cat_age <= 2;
+
+DELETE FROM dog d
+WHERE d.dog_age <=2;
