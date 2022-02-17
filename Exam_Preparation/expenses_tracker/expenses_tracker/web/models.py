@@ -1,32 +1,7 @@
-from django.core.exceptions import ValidationError
 from django.core.validators import MinLengthValidator, MinValueValidator
 from django.db import models
-from django.utils.deconstruct import deconstructible
 
-VALIDATE_ONLY_LETTERS_EXCEPTION_MESSAGE = 'Ensure this value contains only letters.'
-
-
-def validate_only_letters(value):
-    if not value.isalpha():
-        raise ValidationError(VALIDATE_ONLY_LETTERS_EXCEPTION_MESSAGE)
-
-
-@deconstructible
-class MaxFileSizeInMbValidator:
-    def __init__(self, max_size):
-        self.max_size = max_size
-
-    def __call__(self, value):
-        filesize = value.file.size
-        if filesize > self.__megabytes_to_bytes(self.max_size):
-            raise ValidationError(self.__get_exception_message())
-
-    @staticmethod
-    def __megabytes_to_bytes(value):
-        return value * 1024 * 1024
-
-    def __get_exception_message(self):
-        return f'Max file size is {self.max_size:.2f} MB'
+from expenses_tracker.web.validators import validate_only_letters, MaxFileSizeInMbValidator
 
 
 class Profile(models.Model):
@@ -75,4 +50,15 @@ class Profile(models.Model):
 
 
 class Expense(models.Model):
-    pass
+    TITLE_MAX_LEN = 30
+    title = models.CharField(
+        max_length=TITLE_MAX_LEN,
+    )
+
+    price = models.FloatField()
+
+    image = models.URLField()
+    description = models.TextField(
+        null=True,
+        blank=True,
+    )
