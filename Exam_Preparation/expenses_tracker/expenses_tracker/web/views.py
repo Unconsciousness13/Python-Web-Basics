@@ -22,6 +22,10 @@ def show_profile(request):
     return render(request, 'profile.html')
 
 
+def create_profile(request):
+    pass
+
+
 def edit_profile(request):
     return render(request, 'profile-edit.html')
 
