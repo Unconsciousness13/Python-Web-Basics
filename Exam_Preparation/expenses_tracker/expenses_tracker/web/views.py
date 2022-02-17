@@ -10,11 +10,11 @@ def create_expense(request):
     return render(request, 'expense-create.html')
 
 
-def edit_expense(request):
+def edit_expense(request, pk):
     return render(request, 'expense-edit.html')
 
 
-def delete_expense(request):
+def delete_expense(request, pk):
     return render(request, 'expense-delete.html')
 
 
