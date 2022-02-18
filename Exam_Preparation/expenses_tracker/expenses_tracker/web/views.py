@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from expenses_tracker.web.forms import CreateProfileForm, EditProfileForm
 from expenses_tracker.web.models import Profile
 
 
@@ -34,11 +35,36 @@ def show_profile(request):
 
 
 def create_profile(request):
-    return render(request, 'home-no-profile.html')
+    if request.method == 'POST':
+        form = CreateProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('show index')
+
+    else:
+        form = CreateProfileForm()
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'home-no-profile.html', context)
 
 
 def edit_profile(request):
-    return render(request, 'profile-edit.html')
+    profile = get_profile()
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('show index')
+
+    else:
+        form = EditProfileForm(instance=profile)
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'profile-edit.html', context)
 
 
 def delete_profile(request):
