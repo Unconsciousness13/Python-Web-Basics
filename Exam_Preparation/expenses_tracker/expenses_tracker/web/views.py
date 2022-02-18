@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 
+from expenses_tracker.web.models import Profile
+
 
 def get_profile():
-    return 'ok'
+    profiles = Profile.objects.all()
+    if profiles:
+        return profiles[0]
+    return None
 
 
 def show_index(request):

@@ -1,0 +1,75 @@
+1. Create Django project from the menu file !
+
+2. Copy templates into the templates dir.
+
+3. Copy static into static folder staticfile for example.
+
+4. In terminal use python manage.py startapp (web) for example.
+
+5. Move the app folder into project dir.
+
+6. Made urls.py in web(project) dir. -- > made urlpatterns=() or list.
+
+7. Then in urls.py in the project dir add the path of web/urls.py with include('project.web.urls')
+
+8. Add into the settings.py in installed apps list your project ('project.web.')
+
+9. Made your database in settings.py DATABASES , click on the comment link to use the code for postgres,setup
+	your postgres project_name , user , pass , etc.
+	
+10.Then connect to the your DBMS and make new database with the same name like in the project settings.py database name:
+
+11.In settings.py add STATICFILES_DIR = ( BASE_DIR, 'staticfiles')
+
+12.Install psycopg2 for linux ot mac use binary, for example pip install psycopg2-binary
+
+13.Make requirements.txt with terminal command pip freeze > requirements.txt (You have to see this file in the base dir)
+
+14.Run your project python manage.py runserver 8000
+
+15.Test it in browser,test if your static dir works with load some file , 
+	for example style.css http://127.0.0.1:8000/static/css/style.css
+	
+16.Lets setup the urls in urls.py in web dir / make sure to use <int:pk>/ on edit or delete path
+
+17. Go in views.py add the functions for the views with the same nams like in the urls.py
+
+18. REturn in to urls and make the imports.
+
+19.Create view with create profile to swap the index page if profile or not /add the view in urls.
+
+20.Make base template.html in templates(better make a dir base with the file inside to made the difference) , cut the html repeated code
+
+21.Use {% block page_content %}
+    	{% endblock %} to use the inheritence inside the block , then copy the closing tag with rest of the code(be careful)
+	Do it for all templates
+	
+22. GO to every html pages from templates cut the part used in base.html , then add {%  extends 'base/base.html' %}
+	{% block page_content %} and in the bottom cutted part use: {% endblock %}
+
+23.Now you can setup the home page , for sure you have 2 scenarios (with or without profile)
+	-- so is time to make funcion get_profile and fill the show_index function
+
+24.Change href redirects in the html files. (for example : href="{% url 'create expense' %})
+	Always test the changes if works !
+
+25.Repair the hrefs with the static resourses
+
+
+26. Time to make the models ! go to models.py and create the models with class for every.
+
+27. Fill the classes with instructions from the exam file. Always use constants for the numbers or string,declared on top of the class
+
+28. Charfield not have min_length so wi have to do validators.Same do validation  for Numbers ect.
+
+29. If some is optional : null=True,  blank=True
+   -- If validator is a class use @deconstructible !
+
+30. When finish the validation , If validators works then create in the project file validators.py
+	 and some clas try to made migration, first install Pillow to made 	the migrate: pip install Pillow 	then pip freeze > 	reqirements.txt to update the requirements
+	then python manage.py makemigrations then python manage.py migrate
+
+---------------------------
+1. Starting with the views !
+
+
