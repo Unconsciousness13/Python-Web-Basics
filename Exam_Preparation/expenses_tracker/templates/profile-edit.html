@@ -3,7 +3,7 @@
     <h1>Enter your new data</h1>
 
     <div class="form">
-        <form method="POST" action="{% url 'edit profile' %}">
+        <form method="POST" action="{% url 'edit profile' %}" enctype="multipart/form-data">
             {{ form }}
             {% csrf_token %}
             <input type="submit" value="Edit">
