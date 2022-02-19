@@ -15,7 +15,15 @@ def show_index(request):
     profile = get_profile()
     if not profile:
         return redirect('create profile')
-    return render(request, 'home-with-profile.html')
+
+    expenses = Expense.objects.all()
+    budget_left = profile.budget - sum(e.price for e in expenses)
+    context = {
+        'profile': profile,
+        'expenses': expenses,
+        'budget_left': budget_left,
+    }
+    return render(request, 'home-with-profile.html', context)
 
 
 def create_expense(request):
