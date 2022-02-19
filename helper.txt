@@ -101,17 +101,46 @@ Views --------
 
 13. If you have calculations add it to the view functionality
 
+14. If some file is loaded from the user you have to add in settings.py :
+	MEDIA_URL = 'dir/'
+	MEDIA_ROOT = BASE_DIR/'mediafiles' for example
+	* to work properly we have to add it in main urls
+	at thi final of the list + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	with properly imports 
+	from django.conf import settings
+	from django.conf.urls.static import static
 
 
 
+15. Delete is same like edit , only we have to change the template and the form
+	add deleteprofileform in forms and change the name in views
+
+16. Then edit delete.html file adding the form
+	add action="{% url 'delete profile' %}" to form tag
+	add {{ form }}
+        {% csrf_token %} in form
+        delete from fields the fields if need to not shop up.
+        
+        in forms add overriting the save like this
+            def save(self, commit=True):
+            
+            image_path = self.instance.profile_image.path
+            self.instance.delete()
+            os.remove(image_path)
+            return self.instance
+            
+            inside the class before meta
 
 
 
+17.Edit all templates with and set all paths correctly
+
+18.Create classes for every Edit,Create, or Delete in the second class (for example Expense)
+	* if you want to order Expense for example go to the class add Meta: and use ordering = ('price,', title) etc.
 
 
 
-
-
+19. For delete samo functionality like in delete profile
 
 
 
