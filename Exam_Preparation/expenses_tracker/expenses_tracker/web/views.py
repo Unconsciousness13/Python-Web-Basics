@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from expenses_tracker.web.forms import CreateProfileForm, EditProfileForm
+from expenses_tracker.web.forms import CreateProfileForm, EditProfileForm, DeleteProfileForm
 from expenses_tracker.web.models import Profile, Expense
 
 
@@ -81,4 +81,17 @@ def edit_profile(request):
 
 
 def delete_profile(request):
-    return render(request, 'profile-delete.html')
+    profile = get_profile()
+    if request.method == 'POST':
+        form = DeleteProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+            return redirect('show index')
+
+    else:
+        form = DeleteProfileForm(instance=profile)
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'profile-delete.html', context)

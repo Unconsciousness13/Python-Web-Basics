@@ -2,9 +2,10 @@
 {% block page_content %}
     <!-- Delete Profile Form -->
     <h1>Are you sure you want to delete your profile?</h1>
-    <form method="POST">
+    <form method="POST" action="{% url 'delete profile' %}">
+        {{ form }}
+        {% csrf_token %}
 
-        <!-- Confirm Button -->
         <button class="button delete-lg">Confirm</button>
     </form>
     <!-- End Delete Profile Form -->
