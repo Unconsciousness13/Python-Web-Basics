@@ -47,6 +47,10 @@ class Profile(models.Model):
             MaxFileSizeInMbValidator(IMAGE_MAX_SIZE_IN_MB),
         )
     )
+    
+    @property
+    def full_name(self):
+        return f'{self.first_name} {self.last_name}'
 
 
 class Expense(models.Model):

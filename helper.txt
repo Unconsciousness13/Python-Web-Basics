@@ -70,6 +70,62 @@
 	then python manage.py makemigrations then python manage.py migrate
 
 ---------------------------
-1. Starting with the views !
+Views --------
+
+1. Starting with the views , edit get_profile to rerutn profile  !
+
+2. Create file forms in app dir and made class CreateProfileForm(forms.ModelForm) class Meta !
+
+3. Return to views and build the create_profile function with the form inside made the context and return in in the render in the last 		parameter.
+
+4. Go to template with no profile  and generate the inputs from the form then csrf_token
+
+5. in create profile check if request is POst , else : and check if form is valid then form.save()
+
+6. If fields are not in the order like in the example fo to CreateProfileFOrm and change the order in fields
+
+7. Go to vies and copy the create functionality to edit only have to change the new form , made new form in forms (EditProfileForm)
+
+8. The diference is to set profile=get+profile() and in form use instance=profile like parameter
+
+9. Go to edit template and same steps like before use form you can use action with url to the form
+
+10. To can add image , add in form in create_profile and edit_profile property request.FILES and in template form add 	 
+  enctype="multypart/form-data"
+  
+11. If you have to display or hide button like profile button in nav:
+	add in create_profile func  in context 'no_profile': True, and add it in base template with if
+
+12. Time to made show_profile functionality add in the model @property
+
+
+13. If you have calculations add it to the view functionality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
