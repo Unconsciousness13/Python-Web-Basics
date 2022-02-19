@@ -1,10 +1,7 @@
-
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -16,7 +13,6 @@ SECRET_KEY = 'django-insecure-j^d5=qxdnx)ht*8u91h$mcz(a1&katg2coi7^h3)=b=y8ub43%
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -62,7 +58,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'expenses_tracker.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -77,7 +72,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -97,7 +91,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -109,7 +102,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
@@ -117,6 +109,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     BASE_DIR / 'staticfiles',
 )
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'mediafiles'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
