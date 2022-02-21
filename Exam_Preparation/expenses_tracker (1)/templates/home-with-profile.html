@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+    <!-- Summary -->
+    {% if expenses %}
+        <div>
+            <h1>Summary</h1>
+            <ul class="expenses-list">
+                <!-- User Budget -->
+                <li class="blue">{{ profile.budget|floatformat:2 }}</li>
+                <!-- First Expense -->
+                {% for expense in expenses %}
+                    <li class="red"> - {{ expense.price|floatformat:2 }}$</li>
+                {% endfor %}
+                <!-- Money Left -->
+                <li class="green">= {{ budget_left|floatformat:2 }} left</li>
+            </ul>
+        </div>
+    {% endif %}
+    <!-- End Summary -->
+
+    <!-- Headline My Expenses -->
+    <h1>My Expenses</h1>
+    <!-- Add Expense Button -->
+    <a class="button add" href="{% url 'create expense' %}">Add Expense</a>
+
+    <div class="expenses-container">
+
+        {% for expense in expenses %}
+            <div class="expense-container">
+                <!-- Expense Title -->
+                <h2>{{ expense.title }}</h2>
+                <!-- Expense Image -->
+                <img src="{{ expense.image }}"
+                     alt="{{ expense.description }}">
+                <!-- Expense Description -->
+                {% if expense.description %}
+                <p>{{ expense.description}}</p>
+                {% endif %}
+                <div class="expense-detail">
+                    <div>
+                        <!-- Expense Price -->
+                        <p>Price: {{ expense.price|floatformat:2 }}$</p>
+                    </div>
+                    <div class="right">
+                        <!-- Edit Expense Button -->
+                        <a class="button edit" href="{%  url 'edit expense' expense.pk %}">Edit</a>
+                        <!-- Delete Expense Button -->
+                        <a class="button delete" href="{% url 'delete expense' expense.pk %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
