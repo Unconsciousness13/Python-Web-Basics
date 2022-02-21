@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 from online_library.library.forms import CreateProfileForm, EditProfileForm, DeleteProfileForm, CreateBookForm, \
-    EditBookForm
+    EditBookForm, DeleteBookForm
 from online_library.library.models import Book, Profile
 
 
@@ -56,27 +56,17 @@ def edit_book(request, pk):
     return render(request, 'edit-book.html', context)
 
 
-def book_details(request):
-    pass
+def book_details(request, pk):
+    book = Book.objects.get(id=pk)
+    context = {
+        'book': book
+    }
+    return render(request, 'book-details.html', context)
 
 
 def delete_book(request, pk):
-    # expense = Expense.objects.get(pk=pk)
-    # if request.method == 'POST':
-    #     form = DeleteExpenseForm(request.POST, instance=expense)
-    #     if form.is_valid():
-    #         form.save()
-    #         return redirect('show index')
-    # else:
-    #     form = DeleteExpenseForm(instance=expense)
-    #
-    # context = {
-    #     'form': form,
-    #     'expense': expense,
-    # }
-    #
-    # return render(request, 'expense-delete.html', context)
-    pass
+    Book.objects.get(id=pk).delete()
+    return redirect('/')
 
 
 def show_profile(request):

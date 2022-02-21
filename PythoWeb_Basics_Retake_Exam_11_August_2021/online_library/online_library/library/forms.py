@@ -45,12 +45,36 @@ class CreateBookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ('title', 'description', 'image', 'type')
+        labels = {
+            'title': 'Title',
+            'description': 'Description',
+            'image': 'Image',
+            'type': 'Type'
+        }
+        widget = {
+            'title': forms.TextInput(attrs={'placeholder': 'Title'}),
+            'description': forms.TextInput(attrs={'placeholder': 'Description'}),
+            'image': forms.TextInput(attrs={'placeholder': 'Image'}),
+            'type': forms.TextInput(attrs={'placeholder': 'Fiction, Novel, Crime...'})
+        }
 
 
 class EditBookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ('title', 'description', 'image', 'type')
+        labels = {
+            'title': 'Title',
+            'description': 'Description',
+            'image': 'Image',
+            'type': 'Type'
+        }
+        widget = {
+            'title': forms.TextInput(attrs={'placeholder': 'Title'}),
+            'description': forms.TextInput(attrs={'placeholder': 'Description'}),
+            'image': forms.TextInput(attrs={'placeholder': 'Image'}),
+            'type': forms.TextInput(attrs={'placeholder': 'Fiction, Novel, Crime...'})
+        }
 
 
 class DeleteBookForm(forms.ModelForm):
