@@ -8,3 +8,5 @@ class Recipe(models.Model):
     ingredients = models.CharField(max_length=250)
     time = models.IntegerField()
 
+    def ingredients_split(self):
+        return self.ingredients.split(', ')

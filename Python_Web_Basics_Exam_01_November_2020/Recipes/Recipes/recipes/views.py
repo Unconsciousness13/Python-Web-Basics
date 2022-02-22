@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 from Recipes.recipes.forms import CreateRecipeForm
 from Recipes.recipes.models import Recipe
+from django.views import View
 
 
 def home_page(request):
@@ -28,7 +29,7 @@ def create_page(request):
 
 
 def edit_page(request, pk):
-    recipe = Recipe.objects.all(pk=pk)
+    recipe = Recipe.objects.get(pk=pk)
     if request.method == 'POST':
         form = CreateRecipeForm(request.POST, instance=recipe)
         if form.is_valid():
@@ -45,8 +46,11 @@ def edit_page(request, pk):
 
 
 def delete_page(request):
-    pass
+    
 
-
-def details_page(request):
-    pass
+def details_page(request, pk):
+    recipe = Recipe.objects.get(pk=pk)
+    context = {
+        'recipe': recipe
+    }
+    return render(request, 'details.html', context)
