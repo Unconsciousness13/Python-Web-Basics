@@ -1,14 +1,11 @@
 {% extends 'base/base.html' %}
 {% block page_content %}
 
-    <!-- Dashboard Page-->
-
     <section id="dashboard-page" class="dashboard">
         <h1>Dashboard</h1>
         {% if not books %}
             <p class="no-books">No books in database!</p>
         {% else %}
-            <!-- Display ul: with list-items for every books if any -->
             <ul class="my-books-list">
                 {% for b in books %}
                     <li class="myBooks">

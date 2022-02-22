@@ -5,8 +5,8 @@
         <form id="edit-form" action="{% url 'edit profile' %}" method="POST">
             <fieldset>
                 <legend>Edit Profile</legend>
-               {{ form }}
-                {%  csrf_token %}
+                {{ form }}
+                {% csrf_token %}
                 <input class="button submit" type="submit" value="Edit">
             </fieldset>
         </form>
