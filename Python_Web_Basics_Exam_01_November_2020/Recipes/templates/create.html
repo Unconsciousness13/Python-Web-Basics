@@ -1,28 +1,13 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.css">
-    <title>Recipes</title>
-</head>
-
-<body>
-     
- <nav>
-    <ul>
-        <img src="./static/images/chef.png" alt="chef">
-        <li class="title"><a href="/">Recipes</a></li>
-        <li><a href="/create">Add Recipe</a></li>
-    </ul>
-</nav>
-    <div class="container">
+{% extends 'base.html' %}
+{% block page_content %}
         
 <h1>Create Recipe</h1>
 <div class="items-container">
     <div class="item">
-        <form method="POST">
-            <label for="title">Title</label>
+        <form method="POST" action="{% url 'create page' %}">
+            <label for="title">{{ recipes.title }}</label>
             <input type="text" name="title" maxlength="30" required="" id="id_title">
-            <label for="imageURL">Image URL</label>
+            <label for="imageURL">{{ recipes.image_url }}</label>
             <input type="url" name="image_url" maxlength="200" required="" id="id_image_url">
             <label for="description">Description</label>
             <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
@@ -34,8 +19,4 @@
         </form>
     </div>
 </div>
-
-    </div>
-
-
-</body></html>
+{% endblock %}

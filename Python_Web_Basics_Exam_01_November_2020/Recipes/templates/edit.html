@@ -1,20 +1,5 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./static/css/style.css">
-    <title>Recipes</title>
-</head>
-
-<body>
-     
- <nav>
-    <ul>
-        <img src="./static/images/chef.png" alt="chef">
-        <li class="title"><a href="/">Recipes</a></li>
-        <li><a href="./create">Add Recipe</a></li>
-    </ul>
-</nav>
-    <div class="container">
+{% extends 'base.html' %}
+{% block page_content %}
         
 <h1>Edit Recipe</h1>
 <div class="items-container">
@@ -35,8 +20,4 @@ Take everything out of the pot. Strain the broth. Pick the meat off of the bones
         </form>
     </div>
 </div>
-
-    </div>
-
-
-</body></html>
+{% endblock %}
