@@ -30,15 +30,18 @@ class EditProfileForm(forms.ModelForm):
 class DeleteProfileForm(forms.ModelForm):
 
     def save(self, commit=True):
-        image_path = self.instance.profile_image.path
         self.instance.delete()
         Book.objects.all().delete()  # to delete all object conn to profile
-        os.remove(image_path)
         return self.instance
 
     class Meta:
         model = Profile
-        fields = ()
+        fields = ('first_name', 'last_name', 'image_url')
+        labels = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'image_url': 'Profile Image',
+        }
 
 
 class CreateBookForm(forms.ModelForm):
@@ -92,9 +95,3 @@ class DeleteBookForm(forms.ModelForm):
     class Meta:
         model = Book
         fields = ('title', 'description', 'image', 'type')
-        # labels = {
-        #     'first_name': 'First Name',
-        #     'last_name': 'Last Name',
-        #     'budget': 'Budget',
-        #     'profile_image': 'Profile Image',
-        # }
