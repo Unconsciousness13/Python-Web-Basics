@@ -28,6 +28,11 @@ class EditProfileForm(forms.ModelForm):
 
 
 class DeleteProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for _, field in self.fields.items():
+            field.widget.attrs['readonly'] = 'readonly'
+            field.required = False
 
     def save(self, commit=True):
         self.instance.delete()

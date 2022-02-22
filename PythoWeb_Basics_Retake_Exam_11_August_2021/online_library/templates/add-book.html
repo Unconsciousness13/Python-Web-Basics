@@ -2,9 +2,8 @@
 {% block page_content %}
 <!-- Add Book Page -->
 <section id="create-page" class="create">
-    <form id="create-form" action="" method="POST">
+    <form id="create-form" action="{% url 'create book' %}" method="POST">
         <fieldset>
-
             <legend>Add New Book</legend>
             {{ form }}
             {% csrf_token %}
