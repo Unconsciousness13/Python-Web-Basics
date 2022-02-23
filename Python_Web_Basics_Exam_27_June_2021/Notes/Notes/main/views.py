@@ -86,9 +86,11 @@ def detail_note(request, pk):
 
 def profile_main(request):
     profile = get_profile()
+    notes = len(Note.objects.all())
 
     context = {
-        'profile': profile
+        'profile': profile,
+        'notes': notes,
     }
     return render(request, 'profile.html', context)
 
@@ -114,3 +116,7 @@ def delete_profile(request, pk):
     Note.objects.all().delete()
     Profile.objects.get(id=pk).delete()
     return redirect('/')
+
+
+def total_count():
+    return Note.objects.count()
