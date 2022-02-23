@@ -1,23 +1,26 @@
 {% extends 'base.html' %}
 {% block page_content %}
 
-        <div class="body">
-            <!--headings-->
-            <h1>Your Profile</h1>
+    <div class="body">
+        <!--headings-->
+        <h1>Your Profile</h1>
 
-            <div class="note-container">
+        <div class="note-container">
+            {% csrf_token %}
+            <form method="POST">
                 <h2>
-                    {{ profile.first_name}} {{ profile.last_name }}
+                    {{ profile.first_name }} {{ profile.last_name }}
                     <img src="{{ profile.image_url }}" alt=""/>
                 </h2>
                 <p>Age: {{ profile.age }}</p>
                 <div>
-                    <p>All notes: {{ notes }}</p>
+                    <p>All notes: {{ note|length }}</p>
                 </div>
                 <div class="right">
-                    <a class="button delete" href="">Delete</a>
+                    <a class="button delete" href="{% url 'profile delete' profile.id %}" >Delete</a>
                 </div>
-            </div>
-            <!--end profile details container-->
+            </form>
         </div>
-{%  endblock %}
+        <!--end profile details container-->
+    </div>
+{% endblock %}

@@ -97,3 +97,7 @@ def create_profile(request):
     return render(request, 'home-no-profile.html', context)
 
 
+def delete_profile(request, pk):
+    Note.objects.all().delete()
+    Profile.objects.get(id=pk).delete()
+    return redirect('/')

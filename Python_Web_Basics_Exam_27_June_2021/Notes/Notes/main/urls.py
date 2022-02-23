@@ -1,6 +1,7 @@
 from django.urls import path
 
-from Notes.main.views import home_page, add_note, edit_note, delete_note, detail_note, profile_main, create_profile
+from Notes.main.views import home_page, add_note, edit_note, delete_note, detail_note, profile_main, create_profile, \
+    delete_profile
 
 urlpatterns = (
     path('', home_page, name='home page'),
@@ -10,4 +11,5 @@ urlpatterns = (
     path('details/<int:pk>', detail_note, name='details note'),
     path('create/', create_profile, name='profile create'),
     path('profile/', profile_main, name='profile main'),
+    path('profile/delete/<int:pk>', delete_profile, name='profile delete')
 )

@@ -58,3 +58,5 @@ class NoteDetails(forms.ModelForm):
     def get_note(self, request, pk):
         note = Note.objects.get(id=pk)
         return render(request, "note-details.html", {"note": note})
+
+
