@@ -8,7 +8,7 @@
     {% else %}
         {% for note in notes %}
             <div class="note-container">
-                <h2>Today's Tasks <img src="https://www.freeiconspng.com/thumbs/tasks-icon/tasks-icon-9.png"
+                <h2>{{ note.title }} <img src="{{ note.image_url }}"
                                        alt="no image"/></h2>
                 <div class="right">
                     <a class="button details" href="{% url 'details note' note.pk %}">Details</a>
