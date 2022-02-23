@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block page_content %}
+        <h1>Add Note</h1>
+        <!--headings-->
+
+        <!--note data form-->
+        <div class="form">
+            <form method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken"
+                       value="HUrRfZ1Xv8I1kg0RCRhg5I8sTJMRfcaLEI9Pf4LGjQXUjsQgoxLnWAleb0K01njw"/>
+               {{ form }}
+                {% csrf_token %}
+                <input type="submit" value="Publish"/>
+            </form>
+        </div>
+
+{% endblock %}

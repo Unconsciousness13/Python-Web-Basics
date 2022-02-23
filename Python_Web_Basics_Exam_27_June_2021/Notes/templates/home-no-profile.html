@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <!--headings-->
+    <h1>Enter Your Data</h1>
+    <!--end headings-->
+
+    <!--profile data form-->
+    <div class="form">
+        <form method="POST">
+            {{ form }}
+            {% csrf_token %}
+            <input type="submit" value="SUBMIT"/>
+        </form>
+    </div>
+    <!--end profile data form-->
+{% endblock %}

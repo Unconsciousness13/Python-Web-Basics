@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>My Notes</h1>
+
+    {% if not notes %}
+        <h2>There are no notes.</h2>
+        <!--notes container-->
+    {% else %}
+        {% for note in notes %}
+            <div class="note-container">
+                <h2>Today's Tasks <img src="https://www.freeiconspng.com/thumbs/tasks-icon/tasks-icon-9.png"
+                                       alt="no image"/></h2>
+                <div class="right">
+                    <a class="button details" href="{% url 'details note' note.pk %}">Details</a>
+                    <a class="button edit" href="{% url 'edit note' note.pk %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete note' note.pk %}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
