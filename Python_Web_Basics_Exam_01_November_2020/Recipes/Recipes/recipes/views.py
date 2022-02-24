@@ -45,6 +45,7 @@ def edit_page(request, pk):
 
 
 def delete_page(request, pk):
+
     recipe = Recipe.objects.get(pk=pk)
     if request.method == 'POST':
         form = DeleteRecipeForm(request.POST, instance=recipe)

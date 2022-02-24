@@ -3,23 +3,24 @@
     <h1>My Recipes</h1>
     {% if not recipes %}
         <h2>There are no recipes.</h2>
+    {% else %}
         <div class="items-container">
-            {% else %}
-            {% for r in recipes %}
-                <div class="item">
-                    <h2>{{ r.title }}</h2>
-                    <img class="detail-img" src="{{ r.image_url }}"
-                         alt="recipe-image">
-                    <div class="recipe-info">
-                        {{ r.description }}
-                    </div>
-                    <div class="buttons-container">
-                        <a class="button detail" href="{% url 'details page' r.id %}">Details</a>
-                        <a class="button edit" href="{% url 'edit page' r.id %}">Edit</a>
-                        <a class="button delete" href="{% url 'delete page' r.id %}">Delete</a>
-                    </div>
+
+        {% for r in recipes %}
+            <div class="item">
+                <h2>{{ r.title }}</h2>
+                <img class="detail-img" src="{{ r.image_url }}"
+                     alt="recipe-image">
+                <div class="recipe-info">
+                    {{ r.description }}
                 </div>
+                <div class="buttons-container">
+                    <a class="button detail" href="{% url 'details page' r.id %}">Details</a>
+                    <a class="button edit" href="{% url 'edit page' r.id %}">Edit</a>
+                    <a class="button delete" href="{% url 'delete page' r.id %}">Delete</a>
                 </div>
-            {% endfor %}
+            </div>
+        {% endfor %}
     {% endif %}
+</div>
 {% endblock %}

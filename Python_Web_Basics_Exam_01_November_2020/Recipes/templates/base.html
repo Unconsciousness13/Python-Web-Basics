@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,18 +12,15 @@
 
 <nav>
     <ul>
-        <img src="{% static '/images/chef.png' %}" alt="chef">
-        <li class="title"><a href="/">Recipes</a></li>
+        <img src="{% static '/images/chef.png' %}" alt="chef"/>
+        <li class="title"><a href="{% url 'home page' %}">Recipes</a></li>
         <li><a href="{% url 'create page' %}">Add Recipe</a></li>
     </ul>
 </nav>
 <div class="container">
     {% block page_content %}
     {% endblock %}
-
-
 </div>
-
 
 </body>
 </html>
