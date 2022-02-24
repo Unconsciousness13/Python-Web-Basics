@@ -2,12 +2,12 @@
 {% block page_content %}
     <!-- Edit Profile Page -->
     <section id="edit-profile-page" class="edit">
-        <form id="edit-form" action="{% url 'delete profile' %}" method="POST">
+        <form id="edit-form"  method="POST" >
             <fieldset>
                 <legend>Delete Profile</legend>
                 {{ form }}
                 {% csrf_token %}
-                <input class="button submit" type="submit" value="Delete">
+                <input class="button submit"  type="submit" value="Delete">
             </fieldset>
         </form>
     </section>

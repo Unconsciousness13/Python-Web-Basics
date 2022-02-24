@@ -12,6 +12,7 @@
 <body>
 
 <div id="container">
+
     <header id="site-header">
         <nav class="navbar">
             <section class="navbar-dashboard">
@@ -23,17 +24,18 @@
                         <a class="button" href="{% url 'show profile' %}">Profile</a>
                     </div>
                 {% endif %}
+
             </section>
         </nav>
     </header>
     {% block page_content %}
     {% endblock %}
 
-
     <footer id="site-footer">
         <p>Python Web Basics Retake Exam @SoftUni</p>
     </footer>
 </div>
+
 </body>
 
 </html>

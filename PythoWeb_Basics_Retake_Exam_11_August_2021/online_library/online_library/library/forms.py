@@ -1,11 +1,13 @@
-import os
-
 from django import forms
 
 from online_library.library.models import Profile, Book
 
 
 class CreateProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Profile
         fields = ('first_name', 'last_name', 'image_url')
@@ -17,6 +19,10 @@ class CreateProfileForm(forms.ModelForm):
 
 
 class EditProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Profile
         fields = ('first_name', 'last_name', 'image_url')
@@ -30,8 +36,9 @@ class EditProfileForm(forms.ModelForm):
 class DeleteProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.label_suffix = ""
         for _, field in self.fields.items():
-            field.widget.attrs['readonly'] = 'readonly'
+            field.widget.attrs['disabled'] = 'disabled'
             field.required = False
 
     def save(self, commit=True):
@@ -50,24 +57,47 @@ class DeleteProfileForm(forms.ModelForm):
 
 
 class CreateBookForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Book
-        fields = ('title', 'description', 'image', 'type')
-        labels = {
-            'title': 'Title',
-            'description': 'Description',
-            'image': 'Image',
-            'type': 'Type'
+        fields = ["title", "description", "image", "type"]
+
+        widgets = {
+            "title": forms.TextInput(attrs={
+                "type": "text", "name": "title", "maxlength": 30, "required": "", "id": "title",
+                "placeholder": "Title"
+            }),
+            "description": forms.Textarea(attrs={
+                "name": "description", "rows": "100", "cols": "40", "required": "", "id": "description",
+                "placeholder": "Description"
+            }),
+
+            "image": forms.URLInput(attrs={
+                "type": "url", "name": "image", "maxlength": 200, "required": "", "id": "image",
+                "placeholder": "Image"
+            }),
+            "type": forms.TextInput(attrs={
+                "type": "text", "name": "type", "maxlength": 30, "required": "", "id": "type",
+                "placeholder": "Fiction, Novel, Crime.."
+            }),
         }
-        widget = {
-            'title': forms.TextInput(attrs={'placeholder': 'Title'}),
-            'description': forms.TextInput(attrs={'placeholder': 'Description'}),
-            'image': forms.TextInput(attrs={'placeholder': 'Image'}),
-            'type': forms.TextInput(attrs={'placeholder': 'Fiction, Novel, Crime...'})
+
+        labels = {
+            "title": "Title",
+            "description": "Description",
+            "image": "Image",
+            "type": "Type"
         }
 
 
 class EditBookForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Book
         fields = ('title', 'description', 'image', 'type')

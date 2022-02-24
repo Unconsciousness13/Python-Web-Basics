@@ -129,5 +129,9 @@ def delete_profile(request):
 
     context = {
         'form': form,
+        'profile': profile
     }
     return render(request, 'delete-profile.html', context)
+
+
+
