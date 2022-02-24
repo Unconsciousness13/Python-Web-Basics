@@ -19,13 +19,15 @@
             {% else %}
                 <li class="img"><img src="{% static 'images/notes.png' %}" width="32" height="32" alt="No image"/></li>
                 <li><a href="/">Notes</a></li>
-                <li class="right">
-                    {% if not not_show_note %}
-                        <a href="{% url 'add note' %}">Add Note</a>
-                    {% endif %}
-                    <a href="{% url 'profile main' %}">Profile</a>
-                </li>
             {% endif %}
+            <li class="right">
+
+                {% if not not_show_note %}
+                    <a href="{% url 'add note' %}">Add Note</a>
+                {% endif %}
+                <a href="{% url 'profile main' %}">Profile</a>
+            </li>
+
         </ul>
     </nav>
 </header>
