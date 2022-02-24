@@ -26,6 +26,7 @@ def show_index(request):
 
 
 def create_book(request):
+    profile = get_profile()
     if request.method == 'POST':
         form = CreateBookForm(request.POST)
         if form.is_valid():
@@ -36,11 +37,13 @@ def create_book(request):
 
     context = {
         'form': form,
+        'profile': profile,
     }
     return render(request, 'add-book.html', context)
 
 
 def edit_book(request, pk):
+    profile = get_profile()
     book = Book.objects.get(pk=pk)
     if request.method == 'POST':
         form = EditBookForm(request.POST, instance=book)
@@ -52,15 +55,18 @@ def edit_book(request, pk):
 
     context = {
         'form': form,
-        'pk': pk
+        'pk': pk,
+        'profile': profile
     }
     return render(request, 'edit-book.html', context)
 
 
 def book_details(request, pk):
+    profile = get_profile()
     book = Book.objects.get(id=pk)
     context = {
-        'book': book
+        'book': book,
+        'profile': profile
     }
     return render(request, 'book-details.html', context)
 
@@ -132,6 +138,3 @@ def delete_profile(request):
         'profile': profile
     }
     return render(request, 'delete-profile.html', context)
-
-
-
