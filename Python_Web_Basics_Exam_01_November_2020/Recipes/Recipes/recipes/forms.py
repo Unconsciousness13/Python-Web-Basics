@@ -4,8 +4,8 @@ from Recipes.recipes.models import Recipe
 
 
 class CreateRecipeForm(forms.ModelForm):
-    def init(self, args, **kwargs):
-        super().__init__(args, **kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.label_suffix = ""
 
     class Meta:
@@ -22,6 +22,10 @@ class CreateRecipeForm(forms.ModelForm):
 
 
 class EditRecipeForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Recipe
         fields = ('title', 'image_url', 'description', 'ingredients', 'time',)
@@ -37,6 +41,7 @@ class EditRecipeForm(forms.ModelForm):
 class DeleteRecipeForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.label_suffix = ""
         for _, field in self.fields.items():
             field.widget.attrs['disabled'] = 'disabled'
 
