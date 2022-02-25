@@ -5,6 +5,10 @@ from Notes.main.models import Profile, Note
 
 
 class CreateProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Profile
         fields = ('first_name', 'last_name', 'age', 'image_url',)
@@ -17,6 +21,10 @@ class CreateProfileForm(forms.ModelForm):
 
 
 class CreateNoteForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Note
         fields = ('title', 'content', 'image_url',)
@@ -28,6 +36,10 @@ class CreateNoteForm(forms.ModelForm):
 
 
 class EditNoteForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
+
     class Meta:
         model = Note
         fields = ('title', 'content', 'image_url',)
@@ -41,6 +53,7 @@ class EditNoteForm(forms.ModelForm):
 class DeleteNoteForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.label_suffix = ""
         for _, field in self.fields.items():
             field.widget.attrs['disabled'] = 'disabled'
 
@@ -57,5 +70,3 @@ class NoteDetails(forms.ModelForm):
     def get_note(self, request, pk):
         note = Note.objects.get(id=pk)
         return render(request, "note-details.html", {"note": note})
-
-
