@@ -6,6 +6,7 @@
         {% if not books %}
             <p class="no-books">No books in database!</p>
         {% else %}
+
             <ul class="my-books-list">
                 {% for b in books %}
                     <li class="myBooks">
@@ -14,8 +15,13 @@
                         <p class="img"><img src="{{ b.image }}" alt=""></p>
                         <a class="button" href="{% url 'details page' b.id %}">Details</a>
                     </li>
+                    {% if forloop.counter|divisibleby:'3' %}
+                        </ul>
+                        <ul class="my-books-list">
+                    {% endif %}
                 {% endfor %}
-            </ul>
+                </ul>
+
         {% endif %}
     </section>
 {% endblock %}
