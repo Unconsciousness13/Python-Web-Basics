@@ -2,62 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3731032b-fe3e-48d7-a5b3-a3b4ba63ac03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../EXAM.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/web/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/web/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile-details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exama.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/EXAM.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/forms.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/catalog.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/create.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/details.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/home.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/css/typography.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/BrandiCarlile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/Lorde.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/back.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/headphones.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/musicIcons.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/static/images/pinkFloyd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/validators.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/web/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/exam/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/add-album.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/album-details.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/delete-album.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/edit-album.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/home-no-profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/home-with-profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/profile-delete.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exama/templates/profile-details.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home-with-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home-with-profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +62,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645963293697</updated>
-      <workItem from="1645963299420" duration="363000" />
+      <workItem from="1645963299420" duration="1383000" />
     </task>
     <servers />
   </component>
