@@ -3,21 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3731032b-fe3e-48d7-a5b3-a3b4ba63ac03" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/catalog.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/catalog.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/create.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/create.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/css/typography.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/typography.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/BrandiCarlile.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/BrandiCarlile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/Lorde.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/Lorde.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/headphones.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/headphones.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/musicIcons.webp" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/musicIcons.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/web/static/images/pinkFloyd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/pinkFloyd.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home-no-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home-no-profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/exam/web/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile-details.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +69,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645963293697</updated>
-      <workItem from="1645963299420" duration="2231000" />
+      <workItem from="1645963299420" duration="2590000" />
+      <workItem from="1645966725719" duration="272000" />
     </task>
     <servers />
   </component>

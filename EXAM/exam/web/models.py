@@ -29,6 +29,8 @@ class Profile(models.Model):
     )
 
 
+
+
 class Album(models.Model):
     ALBUM_MAX_CHARS = 30
 

@@ -137,3 +137,7 @@ def album_delete(request, pk):
         'not_show_album': False,
     }
     return render(request, 'delete-album.html', context)
+
+
+def total_count():
+    return Album.objects.count()
