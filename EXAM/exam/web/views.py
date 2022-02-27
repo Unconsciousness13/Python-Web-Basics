@@ -54,13 +54,13 @@ def profile_details(request):
     return render(request, 'profile-details.html', context)
 
 
-def delete_profile(context, pk):
+def profile_delete(context, pk):
     Album.objects.all().delete()
     Profile.objects.get(id=pk).delete()
     return redirect('/')
 
 
-def profile_delete(request):
+def delete_profile(request):
     profile = get_profile()
     if request.method == 'POST':
         form = DeleteProfileForm(request.POST, request.FILES, instance=profile)
