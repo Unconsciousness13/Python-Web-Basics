@@ -56,7 +56,7 @@ class CreateAlbumForm(forms.ModelForm):
         fields = ('album_name', 'artist', 'genre', 'description', 'img_url', 'price')
 
         widgets = {
-            "name": forms.TextInput(attrs={
+            "album_name": forms.TextInput(attrs={
                 "type": "text", "name": "name", "required": True,
                 "placeholder": "Album Name"
             }),
@@ -65,13 +65,10 @@ class CreateAlbumForm(forms.ModelForm):
                 "placeholder": "Artist", "required": True
             }),
 
-            # "genre": forms.TextInput(attrs={
-            #     "name": "genre", "id": "genre",
-            # }),
             "description": forms.Textarea(attrs={
-                "name": "genre", "id": "description", "Description": "Album Name"
+                "name": "genre", "id": "description", "placeholder": "Description", "Description": "Album Name"
             }),
-            "image_url": forms.URLInput(attrs={
+            "img_url": forms.URLInput(attrs={
                 "type": "url", "placeholder": "Image URL", "required": True, "id": "imgUrl"
             }),
             "price": forms.NumberInput(attrs={
