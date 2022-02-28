@@ -78,6 +78,7 @@ def delete_profile(request):
 
 
 def create_album(request):
+    profile = get_profile()
     if request.method == 'POST':
         form = CreateAlbumForm(request.POST)
         if form.is_valid():
@@ -88,6 +89,7 @@ def create_album(request):
 
     context = {
         'form': form,
+        'profile': profile,
         'not_show_album': True,
     }
     return render(request, 'add-album.html', context)

@@ -6,9 +6,32 @@ from exam.web.models import Profile, Album
 
 
 class CreateProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     class Meta:
         model = Profile
-        fields = ('username', 'email', 'age')
+        fields = ['username', 'email', 'age']
+
+        # widgets = {
+        #     'username': forms.CharField(attrs={
+        #         'type': 'text',
+        #         'name': 'Username',
+        #         'placeholder': 'Username'
+        #     }),
+        #
+        #     'email': forms.EmailInput(attrs={
+        #         'type': 'text',
+        #         'name': 'email',
+        #         'placeholder': 'Email'
+        #     }),
+        #     'age': forms.IntegerField(attrs={
+        #         'type': 'integer',
+        #         'name': 'username',
+        #         'placeholder': 'Username'
+        #     }),
+        # }
+
         labels = {
             'username': 'Username',
             'email': 'Email',
