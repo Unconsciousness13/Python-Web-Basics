@@ -108,7 +108,7 @@ class DeleteAlbumForm(forms.ModelForm):
             field.widget.attrs['disabled'] = 'disabled'
             field.required = False
 
-    # overriting save for delete
+
     def save(self, commit=True):
         self.instance.delete()
         return self.instance
