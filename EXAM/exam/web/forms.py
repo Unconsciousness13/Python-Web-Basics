@@ -11,26 +11,7 @@ class CreateProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        fields = ['username', 'email', 'age']
-
-        # widgets = {
-        #     'username': forms.CharField(attrs={
-        #         'type': 'text',
-        #         'name': 'Username',
-        #         'placeholder': 'Username'
-        #     }),
-        #
-        #     'email': forms.EmailInput(attrs={
-        #         'type': 'text',
-        #         'name': 'email',
-        #         'placeholder': 'Email'
-        #     }),
-        #     'age': forms.IntegerField(attrs={
-        #         'type': 'integer',
-        #         'name': 'username',
-        #         'placeholder': 'Username'
-        #     }),
-        # }
+        fields = ('username', 'email', 'age')
 
         labels = {
             'username': 'Username',
@@ -38,8 +19,26 @@ class CreateProfileForm(forms.ModelForm):
             'age': 'Age',
         }
 
+        widgets = {
+            "username": forms.TextInput(attrs={
+                "type": "text", "name": "username", "id": "first_name",
+                "placeholder": "Username"
+            }),
+            "email": forms.EmailInput(attrs={
+                "type": "text", "name": "email", "id": "email",
+                "placeholder": "Email"
+            }),
+
+            "age": forms.NumberInput(attrs={
+                "type": "number", "name": "age", "id": "age",
+                "placeholder": "Age", "min": "0"
+            })
+        }
+
 
 class DeleteProfileForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def save(self, commit=True):
         self.instance.delete()
@@ -55,6 +54,30 @@ class CreateAlbumForm(forms.ModelForm):
     class Meta:
         model = Album
         fields = ('album_name', 'artist', 'genre', 'description', 'img_url', 'price')
+
+        widgets = {
+            "name": forms.TextInput(attrs={
+                "type": "text", "name": "name", "required": True,
+                "placeholder": "Album Name"
+            }),
+            "artist": forms.TextInput(attrs={
+                "type": "text", "id": "artist",
+                "placeholder": "Artist", "required": True
+            }),
+
+            # "genre": forms.TextInput(attrs={
+            #     "name": "genre", "id": "genre",
+            # }),
+            "description": forms.Textarea(attrs={
+                "name": "genre", "id": "description", "Description": "Album Name"
+            }),
+            "image_url": forms.URLInput(attrs={
+                "type": "url", "placeholder": "Image URL", "required": True, "id": "imgUrl"
+            }),
+            "price": forms.NumberInput(attrs={
+                "id": "price", "type": "number", "placeholder": "price", "required": True, "min": "0"
+            })
+        }
         labels = {
             'album_name': 'Album Name',
             'artist': 'Artist',
